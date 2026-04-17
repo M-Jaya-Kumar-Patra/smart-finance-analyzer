@@ -21,6 +21,15 @@ export default function Login() {
       <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
       <input placeholder="Password" type="password" onChange={e => setPassword(e.target.value)} />
       <button onClick={handleLogin}>Login</button>
+      <p className="mt-3 text-sm text-center">
+  Don’t have an account?{" "}
+  <span
+    className="text-blue-500 cursor-pointer"
+    onClick={() => router.push("/register")}
+  >
+    Register
+  </span>
+</p>
     </div>
   );
 }
