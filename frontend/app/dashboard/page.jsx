@@ -24,12 +24,15 @@ export default function Dashboard() {
   if (!isLoggedIn()) {
     router.push("/login");
   }
-}, []);
+}, [router]);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+  const loadData = async () => {
+    await fetchData();
+  };
 
+  loadData();
+}, []);
   const getChartData = (transactions) => {
     const map = {};
 
